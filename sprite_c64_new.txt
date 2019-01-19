@@ -1,0 +1,19 @@
+ 
+1 rem new sprite picture
+5 print "(clr/home)" : rem use shift and home
+10 v = 53248 : rem start of display chip
+11 poke v + 21,4 : rem enable sprite 2
+12 poke 2042,13 : rem sprite 2 data from block 13
+20 for n = 0 to 62 : read q : poke 832+n,q : next
+30 for x = 0 to 200             
+40 poke v + 4,x : rem update x coordinates
+50 poke v + 5,x : rem update y coordinates
+60 next x
+70 goto 30
+200 data 0, 24, 0, 0, 24, 0, 0, 24, 0, 0, 24, 0, 0, 126
+210 data 0, 1, 255, 0, 3, 1, 128, 6, 198, 96, 6, 0, 96, 6, 0, 96
+220 data 6, 124, 96, 6, 0, 96, 1, 255, 128, 0, 255, 0, 0, 12
+230 data 0, 0, 24, 0, 0, 24, 0, 0, 24, 0, 7, 255
+240 data  224, 63, 255, 252, 0, 0, 0
+
+ 
